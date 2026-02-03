@@ -1,0 +1,33 @@
+# .NET build outputs
+bin/
+obj/
+**/bin/
+**/obj/
+
+# VS Code
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+**/*.tfstate*
+
+# Terraform artifacts
+terraform/artifacts/
+
+# Lambda package zips
+**/*.zip
+
+# Docker
+**/.dockerignore
+
+# Logs
+**/*.log
+
+# Node (if frontend added later)
+node_modules/

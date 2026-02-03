@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  dynamodb:
+    image: amazon/dynamodb-local:latest
+    container_name: dynamodb-local
+    ports:
+      - "8000:8000"
+    command: -jar DynamoDBLocal.jar -sharedDb -inMemory
+  api:
+    build:
+      context: ./src/aws_dotnet_demo.Api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      AWS_REGION: us-east-1
+      AWS_ACCESS_KEY_ID: local
+      AWS_SECRET_ACCESS_KEY: local
+      DYNAMODB_ENDPOINT_URL: http://dynamodb:8000
+      DYNAMODB_TABLE_NAME: aws_dotnet_demo_items
+    ports:
+      - "8080:8080"
+    depends_on:
+      - dynamodb
