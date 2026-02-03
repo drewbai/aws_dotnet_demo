@@ -1,0 +1,35 @@
+changelog:
+  categories:
+    - title: Features
+      labels:
+        - feature
+        - enhancement
+    - title: Infrastructure
+      labels:
+        - infrastructure
+        - terraform
+    - title: CI/CD
+      labels:
+        - ci
+        - github-actions
+    - title: Documentation
+      labels:
+        - documentation
+        - docs
+    - title: Tests
+      labels:
+        - test
+        - testing
+  exclude:
+    labels:
+      - ignore-for-release
+    authors:
+      - github-actions
+  template: |
+    ## Release Notes
+
+    ### Highlights
+    $CHANGES
+
+    ### Contributors
+    $CONTRIBUTORS
